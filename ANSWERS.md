@@ -5,8 +5,7 @@
 ## TASK 2
 
 ## TASK 3
-no suitable regex (only reserved keywords so we can store them as they are)
-
+"int|float|string|read|write|repeat|until|if|elseif|else|then|return|endl"
 ## TASK 4
 
 ## TASK 5
