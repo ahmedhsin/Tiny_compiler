@@ -12,6 +12,8 @@
 
 ## TASK 6
 
+rule(no suitable regex)
+
 ## TASK 7
 
 ## TASK 8
