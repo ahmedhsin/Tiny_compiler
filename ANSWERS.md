@@ -5,7 +5,7 @@
 ## TASK 2
 
 ## TASK 3
-
+"int|float|string|read|write|repeat|until|if|elseif|else|then|return|endl"
 ## TASK 4
 
 ## TASK 5
