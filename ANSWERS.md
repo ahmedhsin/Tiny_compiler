@@ -10,6 +10,8 @@
 
 ## TASK 5
 
+[a-zA-Z]([a-zA-Z]|[0-9])*
+
 ## TASK 6
 
 ## TASK 7
