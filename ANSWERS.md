@@ -24,9 +24,19 @@ Identifiers=[a-zA-Z]([a-zA-Z]|[0-9])*
 
 Arithmatic_Operator= \+|-|\*|/
 
+[a-zA-Z][a-zA-Z0-9]*:=([0-9]+([-+*/][0-9]+)*)
+
 ## TASK 12
 
-Datatype = (int|float|string)
+(int|float|string)
+
+## TASK 13
+
+## TASK 14
+
+## TASK 15
+
+## TASK 16
 
 ## TASK 17
 
@@ -34,5 +44,28 @@ Condition_Operator= <|>|=|<>
 
 ## TASK 19
 
-Boolean_Operator = &&|\|\|
+&&|\|\|
+
+## TASK 20
+
+## TASK 21
+
+## TASK 22
+
+## TASK 23
+
+## TASK 24
+
+## TASK 25
+
+## TASK 26
+
+## TASK 27
+
+## TASK 28
+
+## TASK 29
+
+## TASK 30
+
 
