@@ -2,27 +2,27 @@
 
 ## TASK 1
 
+number = (\+|-)?([0-9]+)(\.[0-9]+)?(E(\+|-)?[0-9]+)?
+
 ## TASK 2
 
+string = ".*"
+
 ## TASK 3
-"int|float|string|read|write|repeat|until|if|elseif|else|then|return|endl"
+
+Reserved_Words = "int|float|string|read|write|repeat|until|if|elseif|else|then|return|endl"
+
 ## TASK 4
+
+comment = /\*.*\*/
 
 ## TASK 5
 
-[a-zA-Z]([a-zA-Z]|[0-9])*
-
-## TASK 6
-
-## TASK 7
+Identifiers=[a-zA-Z]([a-zA-Z]|[0-9])*
 
 ## TASK 8
 
-## TASK 9
-
-## TASK 10
-
-## TASK 11
+Arithmatic_Operator= \+|-|\*|/
 
 [a-zA-Z][a-zA-Z0-9]*:=([0-9]+([-+*/][0-9]+)*)
 
@@ -40,7 +40,7 @@
 
 ## TASK 17
 
-## TASK 18
+Condition_Operator= <|>|=|<>
 
 ## TASK 19
 
@@ -68,4 +68,4 @@
 
 ## TASK 30
 
-## TASK 31
+
