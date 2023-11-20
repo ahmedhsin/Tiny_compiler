@@ -1,0 +1,2 @@
+D:\tiny_project\Tiny_compiler\obj\Debug\JASON_Compiler.exe
+D:\tiny_project\Tiny_compiler\obj\Debug\JASON_Compiler.pdb
