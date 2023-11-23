@@ -157,6 +157,9 @@ namespace JASON_Compiler
             //Is it a String?
             if (isString(Lex) == true)
             {
+                Tok.token_type = Token_Class.String;
+                Tok.lex = Lex;
+
                 Tokens.Add(Tok);
             }
             //Is it an Operator? (Arithmatic_Operator , Condition_Operator, Boolean_Operator )
