@@ -1,38 +1,47 @@
 # TASKS
 
-## TASK 1
 
-number = (\+|-)?([0-9]+)(\.[0-9]+)?(E(\+|-)?[0-9]+)?
-
-## TASK 2
-
-string = ".*"
-
-## TASK 3
-
-Reserved_Words = "int|float|string|read|write|repeat|until|if|elseif|else|then|return|endl"
-
-## TASK 4
-
-comment = /\*.*\*/
-
-## TASK 5
-
-Identifiers=[a-zA-Z]([a-zA-Z]|[0-9])*
-
-## TASK 8
-
-Arithmatic_Operator= \+|-|\*|/
-
-## TASK 12
-
-Datatype = (int|float|string)
-
-## TASK 17
-
-Condition_Operator= <|>|=|<>
-
-## TASK 19
-
-Boolean_Operator = &&|\|\|
-
+## TASK 6
+Function_Call->
+## TASK 7
+Term->
+## TASK 9
+Equation->
+## TASK 10
+Expression->
+## TASK 11
+Assignment_Statement->
+## TASK 13
+Declaration_Statement->
+## TASK 14
+Write_Statement->
+## TASK 15
+Read_Statement->
+## TASK 16
+Return_Statement->
+## TASK 18
+Condition->
+## TASK 20
+Condition_Statement->
+## TASK 21
+If_Statement->
+## TASK 22
+Else_If_Statement->
+## TASK 23
+Else_Statement->
+## TASK 24
+Repeat_Statement->
+## TASK 25
+FunctionName->
+## TASK 26
+Parameter->
+## TASK 27
+Function_Declaration->
+## TASK 28
+Function_Body->
+## TASK 29
+Function_Statement->
+## TASK 30
+Main_Function->
+## TASK 31
+Program->
