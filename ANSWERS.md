@@ -16,9 +16,9 @@ Declaration_Statement->
 ## TASK 14
 Write_Statement->
 ## TASK 15
-Read_Statement->
+Read_Statement-> "read" identifier ";"
 ## TASK 16
-Return_Statement->
+Return_Statement-> "return" Expression ";"
 ## TASK 18
 Condition->
 ## TASK 20
@@ -42,6 +42,6 @@ Function_Body->
 ## TASK 29
 Function_Statement->
 ## TASK 30
-Main_Function->
+Main_Function-> Datatype "main" "(" ")" Function_Body
 ## TASK 31
-Program->
+Program-> Function_Statement Main_Function
