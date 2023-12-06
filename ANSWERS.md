@@ -1,6 +1,5 @@
 # TASKS
 
-
 ## TASK 6
 Function_Call->
 ## TASK 7
@@ -44,4 +43,4 @@ Function_Statement->
 ## TASK 30
 Main_Function-> Datatype "main" "(" ")" Function_Body
 ## TASK 31
-Program-> Function_Statement Main_Function
+Program -> Function_Statement Program | Main_Function
