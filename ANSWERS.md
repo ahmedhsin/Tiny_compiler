@@ -18,9 +18,9 @@ Declaration_Statement->
 Write_Statement-> write Ep
 Ep -> Expression; | endl;
 ## TASK 15
-Read_Statement-> "read" identifier ";"
+Read_Statement-> read identifier ;
 ## TASK 16
-Return_Statement-> "return" Expression ";"
+Return_Statement-> return Expression ;
 ## TASK 18
 Condition->
 ## TASK 20
@@ -56,7 +56,7 @@ Statment -> Comment_Statement |
 ## TASK 29
 Function_Statement->
 ## TASK 30
-Main_Function-> Datatype main() Function_Body
+Main_Function-> Datatype main () Function_Body
 DataType-> int | string | float
 ## TASK 31
 Program -> Function_Statement Program | Main_Function
