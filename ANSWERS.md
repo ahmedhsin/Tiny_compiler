@@ -56,7 +56,7 @@ Statment -> Comment_Statement |
 ## TASK 29
 Function_Statement->
 ## TASK 30
-Main_Function-> Datatype "main" () Function_Body
+Main_Function-> Datatype main() Function_Body
 DataType-> int | string | float
 ## TASK 31
 Program -> Function_Statement Program | Main_Function
