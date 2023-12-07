@@ -1,7 +1,9 @@
 # TASKS
 
 ## TASK 6
-Function_Call->
+Function_Call-> identifer(Idlist)
+Idlist-> identifier Idlist'
+Idlist'-> , identifier Idlist' | ε
 ## TASK 7
 Term->
 ## TASK 9
@@ -13,7 +15,8 @@ Assignment_Statement->
 ## TASK 13
 Declaration_Statement->
 ## TASK 14
-Write_Statement->
+Write_Statement-> write Ep
+Ep -> Expression; | endl;
 ## TASK 15
 Read_Statement-> "read" identifier ";"
 ## TASK 16
@@ -33,11 +36,23 @@ Repeat_Statement->
 ## TASK 25
 FunctionName->
 ## TASK 26
-Parameter->
+Parameter-> DataType Identifier
+DataType-> int | string | float
 ## TASK 27
 Function_Declaration->
 ## TASK 28
-Function_Body->
+Function_Body-> {Statements Return_Statement}
+Statements -> Statement Statements'
+Statements' -> ; Statement Statements' | ε
+Statment -> Comment_Statement | 
+	    Function_Call     |
+	    Expression	      |
+	    Assignment_Statement |
+	    Declaration_Statement |
+	    Write_Statement	|
+	    Read_Statement |
+	    If_Statement |
+	    Repeat_Statement |
 ## TASK 29
 Function_Statement->
 ## TASK 30
