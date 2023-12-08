@@ -5,15 +5,18 @@ Function_Call-> identifer(Idlist)
 Idlist-> identifier Idlist'
 Idlist'-> , identifier Idlist' | ε
 ## TASK 7
-Term->
+Term->Number|Identifier|Function_Call
 ## TASK 9
-Equation->
+Equation->Term B | ( Term B) | B
+B->Arithmatic_Operator Term
 ## TASK 10
-Expression->
+Expression-> String | Term | Equation
 ## TASK 11
-Assignment_Statement->
+Assignment_Statement->Identifier := Expression
 ## TASK 13
-Declaration_Statement->
+Declaration_Statement->Datatype  AssignmentList ;
+AssignmentList->Identifier Assignments|Assignment_Statement Assignments
+Assignments->ε|, AssignmentList
 ## TASK 14
 Write_Statement-> write Ep
 Ep -> Expression; | endl;
@@ -22,7 +25,7 @@ Read_Statement-> read identifier ;
 ## TASK 16
 Return_Statement-> return Expression ;
 ## TASK 18
-Condition->
+Condition->Identifier Condition_Operator Term
 ## TASK 20
 Condition_Statement->
 ## TASK 21
