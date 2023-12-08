@@ -27,13 +27,14 @@ Return_Statement-> return Expression ;
 ## TASK 18
 Condition->Identifier Condition_Operator Term
 ## TASK 20
-Condition_Statement->
+Condition_Statement->Condition Optional_Condition
+Optional_Condition-> Boolean_Operator Condition_Statement|ε
 ## TASK 21
-If_Statement->
+If_Statement-> if Condition_Statement then Statements If_Statement_Tail
 ## TASK 22
-Else_If_Statement->
+Else_If_Statement-> elseif Condition_Statement then Statement Statements If_Statement_Tail
 ## TASK 23
-Else_Statement->
+Else_Statement-> else Statements end
 ## TASK 24
 Repeat_Statement-> repeat Statements until Condition_Statement
 ## TASK 25
