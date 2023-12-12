@@ -61,3 +61,14 @@ C:\Users\Mirna\OneDrive\Desktop\Compiler\Lab 7\Parser-Template - Studs Versions\
 C:\Users\Mirna\OneDrive\Desktop\Compiler\Lab 7\Parser-Template - Studs Versions\JASON_Compiler\obj\Debug\JASON_Compiler.csproj.CoreCompileInputs.cache
 C:\Users\Mirna\OneDrive\Desktop\Compiler\Lab 7\Parser-Template - Studs Versions\JASON_Compiler\obj\Debug\JASON_Compiler.exe
 C:\Users\Mirna\OneDrive\Desktop\Compiler\Lab 7\Parser-Template - Studs Versions\JASON_Compiler\obj\Debug\JASON_Compiler.pdb
+D:\compiler\Tiny\Tiny_compiler\JASON_Compiler\bin\Debug\JASON_Compiler.exe.config
+D:\compiler\Tiny\Tiny_compiler\JASON_Compiler\bin\Debug\JASON_Compiler.exe
+D:\compiler\Tiny\Tiny_compiler\JASON_Compiler\bin\Debug\JASON_Compiler.pdb
+D:\compiler\Tiny\Tiny_compiler\JASON_Compiler\obj\Debug\JASON_Compiler.csproj.AssemblyReference.cache
+D:\compiler\Tiny\Tiny_compiler\JASON_Compiler\obj\Debug\JASON_Compiler.Form1.resources
+D:\compiler\Tiny\Tiny_compiler\JASON_Compiler\obj\Debug\JASON_Compiler.Form2.resources
+D:\compiler\Tiny\Tiny_compiler\JASON_Compiler\obj\Debug\JASON_Compiler.Properties.Resources.resources
+D:\compiler\Tiny\Tiny_compiler\JASON_Compiler\obj\Debug\JASON_Compiler.csproj.GenerateResource.cache
+D:\compiler\Tiny\Tiny_compiler\JASON_Compiler\obj\Debug\JASON_Compiler.csproj.CoreCompileInputs.cache
+D:\compiler\Tiny\Tiny_compiler\JASON_Compiler\obj\Debug\JASON_Compiler.exe
+D:\compiler\Tiny\Tiny_compiler\JASON_Compiler\obj\Debug\JASON_Compiler.pdb
