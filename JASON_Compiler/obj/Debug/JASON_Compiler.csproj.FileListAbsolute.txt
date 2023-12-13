@@ -72,3 +72,12 @@ D:\compiler\Tiny\Tiny_compiler\JASON_Compiler\obj\Debug\JASON_Compiler.csproj.Ge
 D:\compiler\Tiny\Tiny_compiler\JASON_Compiler\obj\Debug\JASON_Compiler.csproj.CoreCompileInputs.cache
 D:\compiler\Tiny\Tiny_compiler\JASON_Compiler\obj\Debug\JASON_Compiler.exe
 D:\compiler\Tiny\Tiny_compiler\JASON_Compiler\obj\Debug\JASON_Compiler.pdb
+D:\compiler_project\Tiny_compiler-main\JASON_Compiler\obj\Debug\JASON_Compiler.csproj.AssemblyReference.cache
+D:\compiler_project\Tiny_compiler-main\JASON_Compiler\obj\Debug\JASON_Compiler.csproj.SuggestedBindingRedirects.cache
+D:\compiler_project\Tiny_compiler-main\JASON_Compiler\obj\Debug\JASON_Compiler.Form1.resources
+D:\compiler_project\Tiny_compiler-main\JASON_Compiler\obj\Debug\JASON_Compiler.Form2.resources
+D:\compiler_project\Tiny_compiler-main\JASON_Compiler\obj\Debug\JASON_Compiler.Properties.Resources.resources
+D:\compiler_project\Tiny_compiler-main\JASON_Compiler\obj\Debug\JASON_Compiler.csproj.GenerateResource.cache
+D:\compiler_project\Tiny_compiler-main\JASON_Compiler\obj\Debug\JASON_Compiler.csproj.CoreCompileInputs.cache
+D:\compiler_project\Tiny_compiler-main\JASON_Compiler\obj\Debug\JASON_Compiler.exe
+D:\compiler_project\Tiny_compiler-main\JASON_Compiler\obj\Debug\JASON_Compiler.pdb
