@@ -2,8 +2,8 @@
 
 ## TASK 6
 Function_Call-> identifer(Idlist)
-Idlist-> identifier Idlist'
-Idlist'-> , identifier Idlist' | ε
+Idlist-> identifier Idlist_dash
+Idlist_dash-> , identifier Idlist_dash | ε
 ## TASK 7
 
 Term->Number|identifier|Function_Call
