@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -152,10 +153,147 @@ namespace JASON_Compiler
         /*
          Write_Statement-> write Expression; | endl;
          */
+        //Term->Number|identifier|Function_Call
+        Node Term()
+        {
+            Node term = new Node("Term");
+            if (InputPointer < TokenStream.Count && TokenStream[InputPointer].token_type == Token_Class.Number)
+            {
+                term.Children.Add(match(Token_Class.Number));
+
+            }
+            else if (InputPointer < TokenStream.Count && TokenStream[InputPointer].token_type == Token_Class.Identifier)
+            {
+                
+                if (InputPointer + 1 < TokenStream.Count && TokenStream[InputPointer+1].token_type == Token_Class.Leftbracket)
+                {
+                    term.Children.Add(Function_call());
+
+                }
+                else
+                {
+                    term.Children.Add(match(Token_Class.Identifier));
+
+                }
+
+            }
+
+            return term;
+        }
+        //Function_Call-> identifer(Idlist)
+        //Idlist-> identifier Idlist'
+        //Idlist'-> , identifier Idlist' | ε
+        Node Function_call()
+        {
+            Node function_call = new Node("Function_call");
+            function_call.Children.Add(match(Token_Class.Identifier));
+            function_call.Children.Add(match(Token_Class.Leftbracket));
+            function_call.Children.Add(Idlist());
+            function_call.Children.Add(match(Token_Class.Rightbracket));
+
+            return function_call;
+        }
+        Node Idlist()
+        {
+            Node idlist = new Node("Idlist");
+            idlist.Children.Add(match(Token_Class.Identifier));
+            idlist.Children.Add(Idlist_dash());
+            return idlist;
+        }
+        //Idlist'-> , identifier Idlist' | ε
+        Node Idlist_dash()
+        {
+            Node idlist_dash = new Node("Idlist_dash");
+            if (InputPointer < TokenStream.Count && TokenStream[InputPointer].token_type == Token_Class.comma)
+            {
+                idlist_dash.Children.Add(match(Token_Class.comma));
+                idlist_dash.Children.Add(match(Token_Class.Identifier));
+                idlist_dash.Children.Add(Idlist_dash());
+
+            }
+            else
+            {
+                return null;
+
+            }
+           
+            return idlist_dash;
+        }
+        //Assignment_Statement->Identifier := Expression
+        Node Assignment_Statement()
+        {
+            Node assignment_statement = new Node("Assignment_Statement");
+            assignment_statement.Children.Add(match(Token_Class.Identifier));
+            assignment_statement.Children.Add(match(Token_Class.AssignOp));
+            assignment_statement.Children.Add(Expression());
+
+
+            return assignment_statement;
+
+        }
+        //Declaration_Statement->Datatype AssignmentList;
+
+        //AssignmentList->identifier Assignments|Assignment_Statement Assignments
+        //Assignments->ε|, AssignmentList
+        Node Declaration_Statement()
+        {
+            Node declaration_statement = new Node("Declaration_Statement");
+            declaration_statement.Children.Add(Datatype());
+            declaration_statement.Children.Add(Assignment_list());
+
+
+
+            return declaration_statement;
+        }
+        //AssignmentList->identifier Assignments|Assignment_Statement Assignments
+        Node Assignment_list()
+        {
+            Node assignment_list = new Node("Assignment_list");
+            if (InputPointer < TokenStream.Count && TokenStream[InputPointer].token_type == Token_Class.Identifier)
+            {
+              
+                if (InputPointer + 1 < TokenStream.Count && TokenStream[InputPointer+1].token_type == Token_Class.AssignOp)
+                {
+                    assignment_list.Children.Add(Assignment_Statement());
+                    assignment_list.Children.Add(Assignments());
+
+                }
+                else
+                {
+               
+                    assignment_list.Children.Add(match(Token_Class.Identifier));
+                    assignment_list.Children.Add(Assignments());
+
+                }
+
+            }
+            
+                
+         return assignment_list;
+        }
+        //Assignments->ε|, AssignmentList
+        Node Assignments()
+        {
+            Node assignments = new Node("Assignment");
+            if (InputPointer < TokenStream.Count && TokenStream[InputPointer].token_type == Token_Class.comma)
+            {
+                assignments.Children.Add(match(Token_Class.comma));
+                assignments.Children.Add(Assignment_list()); 
+
+            }
+            else
+            {
+                return null;
+            }
+
+
+                return assignments;
+
+        }
         Node Write_Statement()
         {
             Node write_statement = new Node("Write_Statement");
-            if (InputPointer < TokenStream.Count && TokenStream[InputPointer].token_type == Token_Class.write)
+            if (InputPointer < TokenStream.Count && TokenStream[InputPointer].token_type == Token_Class.comma)
             {
                 write_statement.Children.Add(match(Token_Class.write));
                 write_statement.Children.Add(Expression());
@@ -198,6 +336,7 @@ namespace JASON_Compiler
                 return null;
             }
         }
+        
 
         public static TreeNode PrintParseTree(Node root)
         {
