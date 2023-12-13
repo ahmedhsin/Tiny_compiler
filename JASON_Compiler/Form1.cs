@@ -55,6 +55,10 @@ namespace JASON_Compiler
             treeView1.Nodes.Clear();
             Errors.Error_List.Clear();
         }
-        
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
