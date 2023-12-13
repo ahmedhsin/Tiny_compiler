@@ -72,7 +72,12 @@ namespace JASON_Compiler
 
         Node Function_Body()
         {
-            return null;
+            Node function_body = new Node("Function_Body");
+            function_body.Children.Add(match(Token_Class.Leftprant));
+            function_body.Children.Add(Statements());
+            function_body.Children.Add(Return_Statement());
+            function_body.Children.Add(match(Token_Class.Rightprant));
+            return function_body;
         }
         //Function_Statement-> Function_Declaration Function_Body
         Node Function_Statement()

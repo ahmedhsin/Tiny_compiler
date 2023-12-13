@@ -10,7 +10,7 @@ public enum Token_Class
     String, Int, Float, read, write, repeat, until, If, elseif, Else, then, Return,
     endl, comment, STRING, Identifier, Number, Leftbracket, Rightbracket, Leftprant, Rightprant,
     comma, semicolon, EqualOp, LessThanOp, GreaterThanOp, NotEqualOp,
-    PlusOp, MinusOp, DivideOp, MultiplyOp, And, Or, AssignOp,Main
+    PlusOp, MinusOp, DivideOp, MultiplyOp, And, Or, AssignOp,Main, end
 }
 namespace JASON_Compiler
 {
@@ -52,6 +52,7 @@ namespace JASON_Compiler
             ReservedWords.Add("}", Token_Class.Rightprant);
             ReservedWords.Add(";", Token_Class.semicolon);
             ReservedWords.Add(",", Token_Class.comma);
+            ReservedWords.Add("end", Token_Class.end);
 
             Operators.Add(":=", Token_Class.AssignOp);
             Operators.Add("=", Token_Class.EqualOp);
