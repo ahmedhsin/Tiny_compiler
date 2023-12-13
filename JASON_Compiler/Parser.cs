@@ -62,7 +62,13 @@ namespace JASON_Compiler
 
             return mainFunction;
         }
+<<<<<<< HEAD
+        Node Datatype() {
+            return null;
+        }
+=======
        
+>>>>>>> cfb9ddd78d3cb9dcf53f8eec96a44cc07722c8f3
 
         Node Function_Body()
         {
@@ -112,7 +118,12 @@ namespace JASON_Compiler
             }
             return parameters;
         }
+<<<<<<< HEAD
+        Node Parameter()
+        { return null; }
+=======
        
+>>>>>>> cfb9ddd78d3cb9dcf53f8eec96a44cc07722c8f3
         Node Function_Name()
         {
             Node function_name = new Node("Function_Name");
@@ -132,10 +143,17 @@ namespace JASON_Compiler
             return return_statement;
         }
 
+<<<<<<< HEAD
+        Node Expression()
+        {
+            return null;
+        }
+=======
         //Node Expression()
         //{
         //    return null;
         //}
+>>>>>>> cfb9ddd78d3cb9dcf53f8eec96a44cc07722c8f3
         //Read_Statement-> read identifier ;
         Node Read_Statement()
         {
@@ -150,6 +168,12 @@ namespace JASON_Compiler
         /*
          Write_Statement-> write Expression; | endl;
          */
+<<<<<<< HEAD
+        Node Write_Statement()
+        {
+            Node write_statement = new Node("Write_Statement");
+            if (InputPointer < TokenStream.Count && TokenStream[InputPointer].token_type == Token_Class.write)
+=======
         //Term->Number|identifier|Function_Call
         Node Term()
         {
@@ -408,6 +432,7 @@ namespace JASON_Compiler
         {
             Node write_statement = new Node("Write_Statement");
             if (InputPointer < TokenStream.Count && TokenStream[InputPointer].token_type == Token_Class.comma)
+>>>>>>> cfb9ddd78d3cb9dcf53f8eec96a44cc07722c8f3
             {
                 write_statement.Children.Add(match(Token_Class.write));
                 write_statement.Children.Add(Expression());
