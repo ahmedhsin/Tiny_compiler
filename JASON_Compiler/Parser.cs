@@ -46,7 +46,7 @@ namespace JASON_Compiler
         Node Function_Statments()
         {
             Node fns = new Node("Functions");
-            if (InputPointer < TokenStream.Count && TokenStream[InputPointer].token_type != Token_Class.Main)
+            if (InputPointer+1 < TokenStream.Count && TokenStream[InputPointer+1].token_type != Token_Class.Main)
             {
                 fns.Children.Add(Function_Statement());
                 fns.Children.Add(Function_Statments());
