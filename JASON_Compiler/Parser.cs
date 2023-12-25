@@ -46,7 +46,7 @@ namespace JASON_Compiler
         Node Function_Statments()
         {
             Node fns = new Node("Functions");
-            if (InputPointer+1 < TokenStream.Count && TokenStream[InputPointer+1].token_type != Token_Class.Main)
+            if (InputPointer + 1 < TokenStream.Count && TokenStream[InputPointer + 1].token_type != Token_Class.Main)
             {
                 fns.Children.Add(Function_Statement());
                 fns.Children.Add(Function_Statments());
@@ -154,7 +154,7 @@ namespace JASON_Compiler
             {
                 condition_operator.Children.Add(match(Token_Class.LessThanOp));
             }
-            else if (InputPointer < TokenStream.Count && TokenStream[InputPointer].token_type == Token_Class.EqualOp)
+            else /*if (InputPointer < TokenStream.Count && TokenStream[InputPointer].token_type == Token_Class.EqualOp)*/
             {
                 condition_operator.Children.Add(match(Token_Class.EqualOp));
             }
@@ -185,7 +185,7 @@ namespace JASON_Compiler
             {
                 boolean_operator.Children.Add(match(Token_Class.Or));
             }
-            else if (InputPointer < TokenStream.Count && TokenStream[InputPointer].token_type == Token_Class.And)
+            else /*if (InputPointer < TokenStream.Count && TokenStream[InputPointer].token_type == Token_Class.And)*/
             {
                 boolean_operator.Children.Add(match(Token_Class.And));
             }
@@ -204,18 +204,24 @@ namespace JASON_Compiler
         //read x;
         // statments_helper -> until cond | ;
         /*Statements_helper -> ; Statement Statements_helper | ε*/
+        int tmpVar = 0;
         Node Statements_helper()
         {
             Node statements_helper = new Node("Statements_helper");
             bool isuntil = false;
-            if (InputPointer - 4 >= 0 && InputPointer - 4 < TokenStream.Count && TokenStream[InputPointer - 4].token_type == Token_Class.until)
+            if (InputPointer - 4 >= 0 && tmpVar == 0 && InputPointer - 4 < TokenStream.Count && TokenStream[InputPointer - 4].token_type == Token_Class.until)
+            {
                 isuntil = true;
+                tmpVar = 0;
+            }
             if (InputPointer < TokenStream.Count && (isuntil || TokenStream[InputPointer].token_type == Token_Class.semicolon))
             {
+                tmpVar++;
                 if (!isuntil)
                     statements_helper.Children.Add(match(Token_Class.semicolon));
                 statements_helper.Children.Add(Statement());
                 statements_helper.Children.Add(Statements_helper());
+                tmpVar = 0;
                 return statements_helper;
             }
             else
@@ -272,6 +278,10 @@ namespace JASON_Compiler
             else if (InputPointer < TokenStream.Count && TokenStream[InputPointer].token_type == Token_Class.repeat)
             {
                 statment.Children.Add(Repeat_Statement());
+            }
+            else
+            {
+                return null;
             }
             return statment;
         }
