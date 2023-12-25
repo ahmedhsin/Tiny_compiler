@@ -38,19 +38,25 @@ namespace JASON_Compiler
         Node Program()
         {
             Node program = new Node("Program");
-            if (InputPointer + 1 < TokenStream.Count && TokenStream[InputPointer + 1].token_type == Token_Class.Main)
-            {
-                program.Children.Add(Main_Function());
-            }
-            else
-            {
-                program.Children.Add(Function_Statement());
-                program.Children.Add(Program());
-            }
-
+            program.Children.Add(Function_Statments());
+            program.Children.Add(Main_Function());
             return program;
         }
         // Main_Function-> Datatype main () Function_Body
+        Node Function_Statments()
+        {
+            Node fns = new Node("Functions");
+            if (InputPointer < TokenStream.Count && TokenStream[InputPointer].token_type != Token_Class.Main)
+            {
+                fns.Children.Add(Function_Statement());
+                fns.Children.Add(Function_Statments());
+            }
+            else
+            {
+                return null;
+            }
+            return fns;
+        }
         Node Main_Function()
         {
             Node mainFunction = new Node("MainFunction");
@@ -202,9 +208,9 @@ namespace JASON_Compiler
         {
             Node statements_helper = new Node("Statements_helper");
             bool isuntil = false;
-            if (InputPointer - 4 >= 0 && TokenStream[InputPointer - 4].token_type == Token_Class.until)
+            if (InputPointer - 4 >= 0 && InputPointer - 4 < TokenStream.Count && TokenStream[InputPointer - 4].token_type == Token_Class.until)
                 isuntil = true;
-            if (isuntil || InputPointer < TokenStream.Count && TokenStream[InputPointer].token_type == Token_Class.semicolon)
+            if (InputPointer < TokenStream.Count && (isuntil || TokenStream[InputPointer].token_type == Token_Class.semicolon))
             {
                 if (!isuntil)
                     statements_helper.Children.Add(match(Token_Class.semicolon));
@@ -321,8 +327,12 @@ namespace JASON_Compiler
         Node Param()
         {
             Node param = new Node("Param");
-            param.Children.Add(Parameter());
-            param.Children.Add(Parameters());
+            if (InputPointer < TokenStream.Count && (TokenStream[InputPointer].token_type == Token_Class.Int || TokenStream[InputPointer].token_type == Token_Class.Float || TokenStream[InputPointer].token_type == Token_Class.STRING))
+            {
+                param.Children.Add(Parameter());
+                param.Children.Add(Parameters());
+
+            }
             return param;
         }
         //  Parameters -> , Parameter Parameters | ε
@@ -602,9 +612,9 @@ namespace JASON_Compiler
             //Equation->Term B | ( Term B) | B X
             // Equation         → Term B
             Node equation = new Node("Equation");
-                equation.Children.Add(Term());
-                equation.Children.Add(B());
-           
+            equation.Children.Add(Term());
+            equation.Children.Add(B());
+
             return equation;
         }
 
