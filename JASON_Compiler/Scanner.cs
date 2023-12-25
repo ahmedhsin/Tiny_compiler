@@ -85,7 +85,8 @@ namespace JASON_Compiler
                     for (j = i + 1; j < SourceCode.Length; j++)
                     {
                         CurrentChar = SourceCode[j];
-                        if ((CurrentChar >= 'A' && CurrentChar <= 'z') || (CurrentChar >= '0' && CurrentChar <= '9'))
+                        if ((CurrentChar >= 'A' && CurrentChar <= 'z')
+                            || (CurrentChar >= '0' && CurrentChar <= '9'))
                         {
                             CurrentLexeme += CurrentChar;
                         }
