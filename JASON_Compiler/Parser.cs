@@ -413,7 +413,7 @@ namespace JASON_Compiler
                 term.Children.Add(match(Token_Class.Number));
 
             }
-            else if (InputPointer < TokenStream.Count && TokenStream[InputPointer].token_type == Token_Class.Identifier)
+            else
             {
 
                 if (InputPointer + 1 < TokenStream.Count && TokenStream[InputPointer + 1].token_type == Token_Class.Leftbracket)
